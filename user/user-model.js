@@ -6,8 +6,7 @@ function getAll() {
 
 function getBy(filter) {
   return db('user')
-    .where(filter)
-    .first();
+    .where(filter);
 }
 
 async function add(user) {
@@ -15,7 +14,7 @@ async function add(user) {
     .insert(user)
     .returning('id');
 
-  return getBy({ id });
+  return getBy({ id }).first();
 }
 
 module.exports = {

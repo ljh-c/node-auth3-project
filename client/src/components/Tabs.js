@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Nav, NavItem, NavLink, TabContent, TabPane } from 'reactstrap';
+import UserForm from './UserForm';
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState('login');
@@ -29,7 +30,7 @@ const Tabs = () => {
       </Nav>
       <TabContent activeTab={activeTab}>
         <TabPane tabId="login">
-          Log In
+          <UserForm />
         </TabPane>
         <TabPane tabId="signup">
           Sign Up
